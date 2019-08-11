@@ -29,3 +29,28 @@ console.info(list);
 const zero: LinkedListNode<string> = new LinkedListNode("zero", list);
 
 console.info(zero);
+
+class LinkedList<T> {
+  public head?: LinkedListNode<T>;
+  public tail?: LinkedListNode<T>;
+
+  public constructor(value: T) {
+    if (value !== undefined) {
+      this.head = new LinkedListNode(value);
+      this.tail = this.head;
+    }
+  }
+
+  public insert(value: T): void {
+    const newNode: LinkedListNode<T> = new LinkedListNode(value);
+    if (this.tail !== undefined) this.tail.next = newNode;
+    this.tail = newNode;
+    if (this.head === undefined) this.head = newNode;
+  }
+
+  public removeTail(): void {
+    if (this.tail === undefined) {
+    } else {
+    }
+  }
+}
